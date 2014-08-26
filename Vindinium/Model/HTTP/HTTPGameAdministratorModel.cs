@@ -34,12 +34,6 @@ namespace Elsewhere.Vindinium.Model.HTTP
 
         #endregion Constants
 
-        #region Components
-
-        private WebClient client;
-
-        #endregion Components
-
         #region Life-Cycle
 
         /// <summary>
@@ -51,9 +45,6 @@ namespace Elsewhere.Vindinium.Model.HTTP
         {
             this.address = address;
             this.key = key;
-
-            this.client = new WebClient();
-            client.Headers[HttpRequestHeader.ContentType] = HTTPGameAdministratorModel.HTTP_CONTENT_TYPE;
         }
 
         #endregion Life-Cycle
@@ -105,8 +96,12 @@ namespace Elsewhere.Vindinium.Model.HTTP
             string parameters = "key=" + this.key;
             try
             {
-                string json = client.UploadString(uri, parameters);
-                return this.ProcessResponse(json);
+                using (WebClient client = new WebClient())
+                {
+                    client.Headers[HttpRequestHeader.ContentType] = HTTPGameAdministratorModel.HTTP_CONTENT_TYPE;
+                    string json = client.UploadString(uri, parameters);
+                    return this.ProcessResponse(json);
+                }
             }
 
             catch (WebException webException)
@@ -125,10 +120,12 @@ namespace Elsewhere.Vindinium.Model.HTTP
             
             try
             {
-                WebClient client2 = new WebClient();
-                client2.Headers[HttpRequestHeader.ContentType] = HTTPGameAdministratorModel.HTTP_CONTENT_TYPE;
-                string json = client2.UploadString(game.GameURL, parameters);
-                return this.ProcessResponse(json);
+                using (WebClient client = new WebClient())
+                {
+                    client.Headers[HttpRequestHeader.ContentType] = HTTPGameAdministratorModel.HTTP_CONTENT_TYPE;
+                    string json = client.UploadString(game.GameURL, parameters);
+                    return this.ProcessResponse(json);
+                }
             }
 
             catch (WebException webException)
