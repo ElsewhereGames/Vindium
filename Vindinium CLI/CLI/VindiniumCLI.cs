@@ -4,6 +4,7 @@
 using System;
 using System.Threading;
 
+using Elsewhere.Vindinium.Intelligence.Random;
 using Elsewhere.Vindinium.Model;
 using Elsewhere.Vindinium.Model.HTTP;
 
@@ -30,14 +31,12 @@ namespace Elsewhere.Vindinium.CLI
                     System.Diagnostics.Process.Start(game.ViewURL);
                 }
             ).Start();
-            
-            Array values = Enum.GetValues(typeof(Direction));
-            Random random = new Random();
 
+
+            RandomIntelligence intelligence = new RandomIntelligence();
             while (!game.Finished)
             {
-                Direction randomDirection = (Direction)values.GetValue(random.Next(values.Length));
-                game = administrator.MoveHero(game, randomDirection);
+                game = administrator.MoveHero(game, intelligence.DecideDirection(game.Heroes[0], game.Board));
             }
             
             return 0;
