@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Elsewhere.Vindinium.Model
+﻿namespace Elsewhere.Vindinium.Model
 {
+
+    /// <summary>
+    /// Enumerates the various ways in which a hero can move.
+    /// </summary>
     public enum Direction
     {
         Stay,
