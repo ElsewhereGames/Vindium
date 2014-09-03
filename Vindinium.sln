@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vindinium CLI", "Vindinium 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vindinium Intelligence", "Vindinium Intelligence\Vindinium Intelligence.csproj", "{49393894-8982-4141-AD86-4F3613BD13EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vindinium GUI", "Vindinium GUI\Vindinium GUI.csproj", "{BFA24672-6F8F-4F32-BF7C-5DDD92A9E6F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{49393894-8982-4141-AD86-4F3613BD13EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49393894-8982-4141-AD86-4F3613BD13EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49393894-8982-4141-AD86-4F3613BD13EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA24672-6F8F-4F32-BF7C-5DDD92A9E6F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA24672-6F8F-4F32-BF7C-5DDD92A9E6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA24672-6F8F-4F32-BF7C-5DDD92A9E6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA24672-6F8F-4F32-BF7C-5DDD92A9E6F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
