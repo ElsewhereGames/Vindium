@@ -3,6 +3,11 @@
 *.user
 *.sln.docstates
 
+# Dependencies
+
+# Not sure about this yet. Want to ensure that everyone can build out of the box though.
+#./packages
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

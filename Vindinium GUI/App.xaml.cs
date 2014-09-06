@@ -3,6 +3,7 @@
 
 using System.Windows;
 
+using Elsewhere.Vindinium.ViewModel;
 using Elsewhere.Vindinium.GUI.View;
 
 #endregion Using
@@ -24,7 +25,11 @@ namespace Elsewhere.Vindinium.GUI
         /// <param name="arguments">None used.</param>
         protected override void OnStartup(StartupEventArgs arguments)
         {
+            GameAdministratorViewModel administratorModel = new GameAdministratorViewModel();
+            
             VindiniumView window = new VindiniumView();
+            window.DataContext = administratorModel;
+
             window.Show();
         }
 
